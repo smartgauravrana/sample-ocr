@@ -74,7 +74,7 @@ app.post("/api/summarize", upload.single("document"), async (req, res) => {
 });
 
 app.get("/crash", () => {
-  throw new Error("forceful app crash");
+  throw new Error("forceful app crash1");
 });
 
 app.get("/fatal", (req, res) => {
