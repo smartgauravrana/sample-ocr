@@ -73,6 +73,14 @@ app.post("/api/summarize", upload.single("document"), async (req, res) => {
   }
 });
 
+app.get("/crash", () => {
+  throw new Error("forceful app crash");
+});
+
+app.get("/fatal", (req, res) => {
+  process.exit(1); // Exit with error code
+});
+
 app.listen(4000, (err) => {
   if (err) {
     console.error("Error starting server: ", err);
